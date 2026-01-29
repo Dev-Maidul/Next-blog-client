@@ -14,15 +14,19 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 
-export default function DashoardLayout(
-  {admin,user}:{admin:React.ReactNode,user:React.ReactNode}
-) {
-  const userRole={
-    role:"admin"
-  }
+export default function DashoardLayout({
+  admin,
+  user,
+}: {
+  admin: React.ReactNode;
+  user: React.ReactNode;
+}) {
+  const userRole = {
+    role: "user",
+  };
   return (
     <SidebarProvider>
-      <AppSidebar />
+      <AppSidebar user={userRole} />
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger className="-ml-1" />
@@ -45,7 +49,7 @@ export default function DashoardLayout(
           </Breadcrumb>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4">
-          {userRole.role==='admin'?admin:user}
+          {userRole.role === "admin" ? admin : user}
         </div>
       </SidebarInset>
     </SidebarProvider>
