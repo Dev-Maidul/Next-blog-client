@@ -23,12 +23,12 @@ const data = {
       title: "Dashboard",
       items: [
         {
-          title: "Write Blog",
-          url: "/dashboard/write-blog",
+          title: "Admin-Dashboard",
+          url: "/admin-dashboard",
         },
         {
-          title: "Analytics",
-          url: "/dashboard/analytics",
+          title: "User Dashboard",
+          url: "/dashboard",
         },
       ],
     },
