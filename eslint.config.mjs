@@ -1,6 +1,7 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
+import { Roles } from "./src/constants/roles";
 
 const eslintConfig = defineConfig([
   ...nextVitals,
@@ -13,6 +14,16 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    Roles: {
+      "react/no-children-prop": [
+        true,
+        {
+          allowFunctions: true,
+        },
+      ],
+    },
+  },
 ]);
 
 export default eslintConfig;
